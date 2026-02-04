@@ -1,0 +1,158 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --accent: #7f5af0;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 8px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.about {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.skills-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card,
+.project-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), transparent);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+}
+
+.btn {
+  padding: 0.8rem;
+  border: none;
+  color: white;
+  background: linear-gradient(90deg, #7f5af0, #22d3ee);
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+}
