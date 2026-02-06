@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Onboarding</title>
+
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="day10.css">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- TOUR OVERLAY -->
+<div id="tour-portal" class="tour-dim">
+  <div class="guide-tooltip">
+    <h3 id="g-title">Welcome</h3>
+    <p id="g-text">This is Aura onboarding tour.</p>
+    <button onclick="Tour.end()">Close</button>
+  </div>
+</div>
+
+<div class="aura-shell">
+
+  <!-- HEADER -->
+  <header class="aura-header">
+    <div class="a-brand">
+      <div class="a-logo">A</div>
+      <span>AURA</span>
+    </div>
+
+    <div class="a-actions">
+      <button class="a-btn-tour" onclick="Tour.start()">
+        <div class="a-pulse"></div>
+        Take the Tour
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="aura-content">
+
+    <!-- SIDEBAR -->
+    <aside class="aura-sidebar">
+      <h3>Workspace Setup</h3>
+
+      <div class="s-p-bar">
+        <div class="s-p-fill" id="progress"></div>
+      </div>
+      <span id="p-label">0% Complete</span>
+
+      <nav class="s-nav">
+        <div class="s-item active">Identity</div>
+        <div class="s-item">Team</div>
+        <div class="s-item">Node</div>
+        <div class="s-item">Launch</div>
+      </nav>
+    </aside>
+
+    <!-- STAGE -->
+    <section class="aura-stage">
+
+      <div class="pane active">
+        <div class="p-intro">
+          <h1>Establish <span>Identity</span></h1>
+          <p>Enter operator name</p>
+        </div>
+
+        <input type="text" placeholder="Your name" />
+        <button class="btn-continue" onclick="Flow.next()">Next</button>
+      </div>
+
+      <div class="pane">
+        <div class="p-intro">
+          <h1>Team <span>Setup</span></h1>
+        </div>
+        <button class="btn-continue" onclick="Flow.next()">Next</button>
+      </div>
+
+      <div class="pane">
+        <div class="p-intro">
+          <h1>Select <span>Node</span></h1>
+        </div>
+        <button class="btn-continue" onclick="Flow.next()">Next</button>
+      </div>
+
+      <div class="pane">
+        <div class="p-launch">
+          <div class="l-orb"></div>
+          <h1>Aura <span>Online</span></h1>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- JS (INSIDE HTML AS REQUESTED) -->
+<script>
+  const panes = document.querySelectorAll('.pane');
+  const steps = document.querySelectorAll('.s-item');
+  const progress = document.getElementById('progress');
+  const label = document.getElementById('p-label');
+
+  let step = 0;
+
+  const Flow = {
+    next() {
+      if (step < panes.length - 1) {
+        panes[step].classList.remove('active');
+        steps[step].classList.remove('active');
+
+        step++;
+
+        panes[step].classList.add('active');
+        steps[step].classList.add('active');
+
+        const percent = Math.round((step / (panes.length - 1)) * 100);
+        progress.style.width = percent + '%';
+        label.textContent = percent + '% Complete';
+      }
+    }
+  };
+
+  const Tour = {
+    start() {
+      document.getElementById('tour-portal').style.display = 'block';
+    },
+    end() {
+      document.getElementById('tour-portal').style.display = 'none';
+    }
+  };
+</script>
+
+</body>
+</html>
