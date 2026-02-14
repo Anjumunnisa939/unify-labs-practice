@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 span {
+    color: orange;
+}
+
+.buttons {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: white;
+}
+
+.output {
+    margin-top: 20px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    min-width: 300px;
+}
