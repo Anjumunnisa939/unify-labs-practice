@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=JetBrains+Mono:wght@700&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #000, #111);
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.lab-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h1 span {
+    color: #f97316;
+}
+
+.pet-card {
+
+    background: #111;
+    border: 1px solid #222;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+
+    box-shadow: 0 0 20px rgba(249,115,22,0.2);
+
+}
+
+.stats p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+
+    background: #f97316;
+    color: white;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ea580c;
+}
+
+.debug-panel {
+
+    margin-top: 20px;
+
+    background: black;
+    border: 1px solid #333;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    font-family: 'JetBrains

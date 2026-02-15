@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Pet Lab - Day 18</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="root">
+    <div class="lab-container">
+
+        <h1>Digital <span>Pet</span> System 🐾</h1>
+
+        <div class="pet-card">
+
+            <h2 id="petName">Pet Name: Loading...</h2>
+
+            <div class="stats">
+                <p>Health: <span id="health">0</span></p>
+                <p>Energy: <span id="energy">0</span></p>
+                <p>Status: <span id="status">Idle</span></p>
+            </div>
+
+            <div class="buttons">
+                <button onclick="feedPet()">🍖 Feed</button>
+                <button onclick="playPet()">⚽ Play</button>
+                <button onclick="restPet()">😴 Rest</button>
+                <button onclick="getPetStatus()">📊 Get Status</button>
+            </div>
+
+            <div id="display" class="debug-panel">
+                System Ready...
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
