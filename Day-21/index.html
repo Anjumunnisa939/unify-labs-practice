@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="header">
+        <h2>Storage Dashboard <span>Pro</span></h2>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <div class="card">
+
+        <input id="name" placeholder="Enter name">
+        <input id="age" placeholder="Enter age">
+
+        <div class="btn-group">
+            <button onclick="saveLocal()">Save Local</button>
+            <button onclick="saveSession()">Save Session</button>
+            <button onclick="saveCookie()">Save Cookie</button>
+        </div>
+
+    </div>
+
+    <div class="card profile" id="profile">
+        No user loaded
+    </div>
+
+    <div class="grid">
+
+        <div class="storageCard">
+            <h3>LocalStorage</h3>
+            <div id="localData">Empty</div>
+            <button class="delete" onclick="deleteLocal()">Delete</button>
+        </div>
+
+        <div class="storageCard">
+            <h3>SessionStorage</h3>
+            <div id="sessionData">Empty</div>
+            <button class="delete" onclick="deleteSession()">Delete</button>
+        </div>
+
+        <div class="storageCard">
+            <h3>Cookie</h3>
+            <div id="cookieData">Empty</div>
+            <button class="delete" onclick="deleteCookie()">Delete</button>
+        </div>
+
+    </div>
+
+</div>

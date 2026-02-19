@@ -1,0 +1,107 @@
+:root{
+ --bg:#020617;
+ --card:#0f172a;
+ --accent:#f97316;
+ --text:white;
+}
+
+.light{
+ --bg:#f1f5f9;
+ --card:white;
+ --text:black;
+}
+
+body{
+ margin:0;
+ font-family:system-ui;
+ background:var(--bg);
+ color:var(--text);
+ transition:0.3s;
+}
+
+.container{
+ max-width:900px;
+ margin:auto;
+ padding:20px;
+}
+
+.header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.header span{
+ color:var(--accent);
+}
+
+.card{
+ background:var(--card);
+ padding:20px;
+ border-radius:15px;
+ margin-top:15px;
+ animation:fade 0.5s;
+}
+
+input{
+ width:100%;
+ padding:10px;
+ margin-top:10px;
+ border-radius:8px;
+ border:none;
+}
+
+.btn-group{
+ display:flex;
+ gap:10px;
+ margin-top:15px;
+}
+
+button{
+ padding:10px;
+ border:none;
+ border-radius:8px;
+ cursor:pointer;
+ background:var(--accent);
+ color:white;
+ flex:1;
+}
+
+.delete{
+ background:red;
+ margin-top:10px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:15px;
+ margin-top:15px;
+}
+
+.storageCard{
+ padding:15px;
+ border-radius:10px;
+ background:rgba(255,255,255,0.05);
+}
+
+.profile{
+ text-align:center;
+ font-size:18px;
+}
+
+.profile span{
+ color:var(--accent);
+ font-weight:bold;
+}
+
+@keyframes fade{
+ from{
+  opacity:0;
+  transform:translateY(10px);
+ }
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
