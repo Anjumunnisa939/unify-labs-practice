@@ -6,50 +6,67 @@ function addProduct() {
     let price = parseFloat(document.getElementById("price").value);
     let stock = parseInt(document.getElementById("stock").value);
 
-    if (!name || !price || !stock) {
-        alert("Please fill all fields");
+    if (!name || isNaN(price) || isNaN(stock)) {
+        alert("Fill all fields properly");
         return;
     }
 
-    let product = {
+    products.push({
         name,
         category,
         price,
-        stock
-    };
+        stock,
+        featured: false
+    });
 
-    products.push(product);
     showAll();
 }
 
+// MASS UPDATE 1: Increase Electronics price by 10
+function increaseElectronics() {
+    products.forEach(p => {
+        if (p.category === "Electronics") {
+            p.price += 10;
+        }
+    });
+    showAll();
+}
+
+// MASS UPDATE 2: Set featured true if price > 500
+function setFeatured() {
+    products.forEach(p => {
+        if (p.price > 500) {
+            p.featured = true;
+        }
+    });
+    showAll();
+}
+
+// CLEANUP: Delete products where stock = 0
+function deleteOutOfStock() {
+    products = products.filter(p => p.stock !== 0);
+    showAll();
+}
+
+// COUNT DOCUMENTS
+function countProducts() {
+    document.getElementById("countDisplay").innerText =
+        "Total Products: " + products.length;
+}
+
+// DISPLAY
 function showAll() {
-    display(products);
-}
-
-function showElectronics() {
-    let electronics = products.filter(p => p.category === "Electronics");
-    display(electronics);
-}
-
-function showTop2Expensive() {
-    let sorted = [...products]
-        .sort((a, b) => b.price - a.price)
-        .slice(0, 2);
-
-    display(sorted);
-}
-
-function display(list) {
     let output = document.getElementById("output");
     output.innerHTML = "";
 
-    list.forEach(p => {
+    products.forEach(p => {
         output.innerHTML += `
             <div class="product">
                 <h3>${p.name}</h3>
                 <p>Category: ${p.category}</p>
                 <p>Price: ₹${p.price}</p>
                 <p>Stock: ${p.stock}</p>
+                <p>Featured: ${p.featured}</p>
             </div>
         `;
     });

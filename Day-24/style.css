@@ -1,16 +1,11 @@
 body {
     font-family: Arial;
     text-align: center;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
-h1 {
-    margin-top: 20px;
-}
-
-.form-container input, 
-.form-container select {
+input, select {
     padding: 8px;
     margin: 5px;
     border-radius: 5px;
@@ -18,7 +13,7 @@ h1 {
 }
 
 button {
-    padding: 8px 15px;
+    padding: 8px 12px;
     margin: 5px;
     border-radius: 5px;
     border: none;
@@ -31,14 +26,11 @@ button:hover {
     background: yellow;
 }
 
-#output {
-    margin-top: 20px;
-}
 .product {
     background: white;
     color: black;
     padding: 10px;
     margin: 10px auto;
-    width: 300px;
+    width: 320px;
     border-radius: 8px;
 }
