@@ -1,0 +1,44 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.form-container input, 
+.form-container select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: orange;
+    font-weight: bold;
+}
+
+button:hover {
+    background: yellow;
+}
+
+#output {
+    margin-top: 20px;
+}
+.product {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 8px;
+}
